@@ -1,0 +1,22 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Movie {
+  id: Int!
+  title: String!
+  directorId: Int!
+}
+
+type Query {
+  movies: [Movie!]!
+}
+
+type Mutation {
+  add(addMovieInput: AddMovieInput!): Boolean!
+}
+
+input AddMovieInput {
+  title: String!
+  directorId: Float!
+}
