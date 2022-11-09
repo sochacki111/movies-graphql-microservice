@@ -1,0 +1,37 @@
+version: "3"
+services:
+  movies-microservices:
+    target: development
+    image: movies-microservices
+    container_name: movies-microservices
+    ports: 
+      - 3001:3001
+      - 9229:9229
+    networks:
+      - movies-network
+    depends_on:
+      - rabbitmq
+    env_file:
+      - .env
+    volumes:
+      - ./:/usr/src/app
+      - /usr/src/app/node_modules
+    command: npm run start:debug:docker
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    hostname: rabbitmq
+    volumes:
+      - /var/lib/rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    env_file:
+      - .env
+    networks:
+      - movies-network
+
+networks:
+  movies-network:
+    driver: bridge
