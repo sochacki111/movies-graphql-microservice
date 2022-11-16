@@ -9,7 +9,7 @@ RUN npm i
 
 COPY . .
 
-EXPOSE 3001
+RUN npm run build
 
 FROM node:14 AS production
 
@@ -19,7 +19,7 @@ WORKDIR /usr/src/app
 
 COPY --from=development /usr/src/app .
 
-RUN npm run build && npm prune --production
+RUN npm prune --production
 
 EXPOSE 8080
 

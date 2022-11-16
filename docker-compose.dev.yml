@@ -1,9 +1,32 @@
 version: "3"
 services:
+  movies:
+    container_name: movies
+    build:
+      dockerfile: ../movies/Dockerfile
+      target: development
+      context: ../movies # is it correct ??
+    image: movies
+    ports:
+      - "3000:3000"
+    networks: 
+      - movies-network
+    depends_on:
+      - rabbitmq
+    env_file:
+      - ../movies/.env
+    # volumes:
+    #   - ..movies/:/usr/src/app
+    #   - /usr/src/app/node_modules
+    # command: npm run start:dev movies
+    
   movies-microservices:
-    target: development
-    image: movies-microservices
     container_name: movies-microservices
+    build: 
+      dockerfile: Dockerfile
+      target: development
+      context: .
+    image: movies-microservices
     ports: 
       - 3001:3001
       - 9229:9229

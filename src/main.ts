@@ -21,6 +21,7 @@ async function bootstrap() {
       queueOptions: {
         durable: true,
       },
+      persistent: true,
     },
   });
 
@@ -28,6 +29,6 @@ async function bootstrap() {
 
   await app
     .listen(configService.get('PORT'))
-    .then(() => console.log('nest v1'));
+    .then(() => console.log('movies-microservices v2'));
 }
 bootstrap();

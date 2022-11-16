@@ -25,6 +25,7 @@ import { MoviesService } from './movies.service';
             queueOptions: {
               durable: true,
             },
+            persistent: true,
           },
         });
       },

@@ -24,10 +24,7 @@ export class MoviesResolver {
   async add(
     @Args('addMovieInput') addMovieInput: AddMovieInput,
   ): Promise<boolean> {
-    console.log('addMovieInputfffs', addMovieInput);
-    this.moviesSendService.emit({ cmd: 'add-movie' }, addMovieInput);
-    // this.moviesSendService.send({ cmd: 'add-movie' }, addMovieInput);
-    // return { id: 1, title: 'test', directorId: 1 };
+    this.moviesSendService.emit('added_movie', addMovieInput);
     return true;
   }
 }
