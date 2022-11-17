@@ -1,0 +1,14 @@
+name: Hello world CI
+
+on:
+  push:
+    branches: '**'
+  pull_request:
+    branches: [main]
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo hello world
