@@ -20,13 +20,13 @@ services:
     #   - /usr/src/app/node_modules
     # command: npm run start:dev movies
     
-  movies-microservices:
-    container_name: movies-microservices
+  movies-graphql-microservice:
+    container_name: movies-graphql-microservice
     build: 
       dockerfile: Dockerfile
       target: development
       context: .
-    image: movies-microservices
+    image: movies-graphql-microservice
     ports: 
       - 3001:3001
       - 9229:9229
