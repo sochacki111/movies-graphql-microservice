@@ -13,12 +13,12 @@ export class MoviesService {
       {
         id: 1,
         title: 'test',
-        directorId: 1,
+        director: { id: 1, firstName: 'hello', lastName: 'world' },
       },
       {
         id: 2,
         title: 'test2',
-        directorId: 2,
+        director: { id: 2, firstName: 'hello2', lastName: 'world2' },
       },
     ];
   }

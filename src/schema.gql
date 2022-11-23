@@ -2,10 +2,16 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type Director {
+  id: Int!
+  firstName: String!
+  lastName: String!
+}
+
 type Movie {
   id: Int!
   title: String!
-  directorId: Int!
+  director: Director!
 }
 
 type Query {
