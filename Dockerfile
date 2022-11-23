@@ -11,7 +11,7 @@ COPY . .
 
 RUN npm run build
 
-FROM node:14 AS production
+FROM node:18 AS production
 
 ARG NODE_ENV=production
 
