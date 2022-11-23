@@ -1,4 +1,5 @@
 import { Field, Int, ObjectType } from '@nestjs/graphql';
+import { Director } from './director.model';
 
 @ObjectType()
 export class Movie {
@@ -8,6 +9,6 @@ export class Movie {
   @Field()
   title: string;
 
-  @Field(() => Int)
-  directorId: number;
+  @Field((type) => Director)
+  director: Director;
 }
