@@ -1,6 +1,6 @@
 {
-  "name": "movies-microservices",
-  "version": "0.0.1",
+  "name": "movies-graphql-microservice",
+  "version": "1.0.0",
   "description": "",
   "author": "",
   "private": true,

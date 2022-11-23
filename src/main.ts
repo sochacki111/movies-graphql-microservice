@@ -29,6 +29,6 @@ async function bootstrap() {
 
   await app
     .listen(configService.get('PORT'))
-    .then(() => console.log('movies-microservices v2'));
+    .then(() => console.log('movies-graphql-microservice v2'));
 }
 bootstrap();
